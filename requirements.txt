@@ -1,8 +1,6 @@
 numpy
 opencv-python-headless
 requests
-progressbar
-tensorflow
 keras
 cvlib
 flask
