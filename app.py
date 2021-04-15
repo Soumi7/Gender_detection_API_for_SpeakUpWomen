@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template, url_for, make_response
 import os
-import json
 import numpy as np
 app = Flask(__name__)
 import numpy as np
