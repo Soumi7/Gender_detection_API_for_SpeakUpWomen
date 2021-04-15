@@ -1,6 +1,6 @@
 numpy
 opencv-python-headless
-tensorflow
+tensorflow-cpu
 keras
 cvlib
 flask
