@@ -3,7 +3,6 @@ import os
 import json
 import numpy as np
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = "./imgdir"
 import numpy as np
 import cv2
 import pandas as pd
@@ -19,8 +18,6 @@ model = load_model(model_path)
 classes = ['man','woman']
 
 
-# Disable scientific notation for clarity
-# Load the model
 @app.route('/')
 def home():
     return "Gender Detection API working perfectly!"
