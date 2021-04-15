@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template, url_for, make_response
-from werkzeug.utils import secure_filename
 import os
 import json
 import numpy as np
@@ -8,7 +7,6 @@ app.config['UPLOAD_FOLDER'] = "./imgdir"
 import numpy as np
 import cv2
 import pandas as pd
-import pytesseract
 import io
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
@@ -16,7 +14,7 @@ from keras.utils import get_file
 import numpy as np
 import cvlib as cv
 
-model_path = "./pretrained/gender_detection.model"
+model_path = "./pre-trained/gender_detection.model"
 model = load_model(model_path)
 classes = ['man','woman']
 
@@ -56,6 +54,5 @@ def predict():
         count+=1
     return jsonify(label = label,count = count)
 
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=5000,threaded=False)

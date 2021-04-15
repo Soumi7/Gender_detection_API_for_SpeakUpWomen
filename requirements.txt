@@ -1,7 +1,10 @@
 numpy
-opencv-python
+opencv-python-headless
 requests
 progressbar
 tensorflow
 keras
 cvlib
+flask
+pandas
+gunicorn
