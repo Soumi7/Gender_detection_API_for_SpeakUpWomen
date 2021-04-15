@@ -1,7 +1,7 @@
 numpy
 opencv-python-headless
-tensorflow-cpu
-keras
+tensorflow-cpu==1.14.0
+keras==2.2.4
 cvlib
 flask
 pandas
