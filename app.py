@@ -52,6 +52,6 @@ def predict():
     return jsonify(label = label,count = count)
 
 if __name__ == '__main__':
-    web: python myApp.py runserver 0.0.0.0:$PORT
+    #web: python myApp.py runserver 0.0.0.0:$PORT
     app.run(host='0.0.0.0',port=5000,threaded=False)
     #app.run(host='0.0.0.0',port=5000)
