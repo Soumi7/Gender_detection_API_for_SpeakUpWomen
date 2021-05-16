@@ -27,6 +27,7 @@ def predict():
     print(file.filename)
     file.save("sample_input.png")
     image = cv2.imread("sample_input.png")
+    print(image.shape)
 
     if image is None:
         print("Could not read input image")     
