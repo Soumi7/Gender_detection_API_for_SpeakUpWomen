@@ -25,8 +25,8 @@ def predict():
     #for HTML GUI rendering
     file = request.files['file']
     print(file.filename)
-    file.save(file.filename)
-    image = cv2.imread(file.filename)
+    file.save("sample_input.png")
+    image = cv2.imread("sample_input.png")
 
     if image is None:
         print("Could not read input image")     
