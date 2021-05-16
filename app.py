@@ -29,26 +29,37 @@ def predict():
     image = cv2.imread("sample_input.png")
     print(image.shape)
 
-    if image is None:
-        print("Could not read input image")     
-    face, confidence = cv.detect_face(image)
-    count = 0
-    for idx, f in enumerate(face):
-        (startX, startY) = f[0], f[1]
-        (endX, endY) = f[2], f[3]
-        cv2.rectangle(image, (startX,startY), (endX,endY), (0,255,0), 2)
-        face_crop = np.copy(image[startY:endY,startX:endX])
-        face_crop = cv2.resize(face_crop, (96,96))
-        face_crop = face_crop.astype("float") / 255.0
-        face_crop = img_to_array(face_crop)
-        face_crop = np.expand_dims(face_crop, axis=0)
-        conf = model.predict(face_crop)[0]
-        idx = np.argmax(conf)
-        label = classes[idx]
-        if count>1:
-            break
-        count+=1
-    return jsonify(label = label,count = count)
+    face_crop = cv2.resize(image, (96,96))
+    face_crop = face_crop.astype("float") / 255.0
+    face_crop = img_to_array(face_crop)
+    face_crop = np.expand_dims(face_crop, axis=0)
+    conf = model.predict(face_crop)[0]
+    idx = np.argmax(conf)
+    label = classes[idx]
+    return jsonify(label = label)
+
+
+    # if image is None:
+    #     print("Could not read input image")     
+    # face, confidence = cv.detect_face(image)
+
+    # count = 0
+    # for idx, f in enumerate(face):
+    #     (startX, startY) = f[0], f[1]
+    #     (endX, endY) = f[2], f[3]
+    #     cv2.rectangle(image, (startX,startY), (endX,endY), (0,255,0), 2)
+    #     face_crop = np.copy(image[startY:endY,startX:endX])
+    #     face_crop = cv2.resize(face_crop, (96,96))
+    #     face_crop = face_crop.astype("float") / 255.0
+    #     face_crop = img_to_array(face_crop)
+    #     face_crop = np.expand_dims(face_crop, axis=0)
+    #     conf = model.predict(face_crop)[0]
+    #     idx = np.argmax(conf)
+    #     label = classes[idx]
+    #     if count>1:
+    #         break
+    #     count+=1
+    # return jsonify(label = label,count = count)
 
 if __name__ == '__main__':
     #web: python myApp.py runserver 0.0.0.0:$PORT
