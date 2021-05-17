@@ -10,12 +10,10 @@ For example :
 
 This model classifies an input image into either of the two classes - man or woman. To run :
 
-```git clone https://github.com/Soumi7/Gender_detection_API_for_SpeakUpWomen
-```
+```git clone https://github.com/Soumi7/Gender_detection_API_for_SpeakUpWomen```
  Change CWD to the cloned repo folder :
  
- ```cd Gender_detection_API_for_SpeakUpWomen
- ```
+ ```cd Gender_detection_API_for_SpeakUpWomen```
  
  Run flask app :
  
