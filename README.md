@@ -1,12 +1,14 @@
 # Gender_detection_API_for_SpeakUpWomen
 
-API endpoint usage :
+## API endpoint usage :
 
 ```curl -X POST https://speakupgenderapi.herokuapp.com/predict_api -F "file=@IMAGE_NAME"```
 
 For example :
 
 ```curl -X POST https://speakupgenderapi.herokuapp.com/predict_api -F "file=@soumi.jpeg"```
+
+## Instructions to run
 
 This model classifies an input image into either of the two classes - man or woman. To run :
 
